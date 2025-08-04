@@ -1,0 +1,70 @@
+{
+  "name": "web-scraper-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for scraping images and text from websites with comprehensive web content extraction capabilities",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "node simple-test.js",
+    "lint": "eslint src/**/*.ts",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "web-scraper",
+    "anthropic",
+    "model-context-protocol",
+    "web-crawler",
+    "image-scraping",
+    "text-extraction",
+    "cheerio",
+    "axios",
+    "sharp",
+    "typescript"
+  ],
+  "author": "Web Scraper Team",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "cheerio": "^1.0.0",
+    "axios": "^1.6.0",
+    "sharp": "^0.33.0",
+    "fs-extra": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/fs-extra": "^11.0.0",
+    "@types/cheerio": "^0.22.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "examples"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/web-scraper-mcp.git",
+    "directory": "web-scraper-mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/web-scraper-mcp/issues"
+  },
+  "homepage": "https://github.com/yourusername/web-scraper-mcp#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/yourusername"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

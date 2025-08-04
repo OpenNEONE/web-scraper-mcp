@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日蚀动态特效 - 苹果风格</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="eclipse-container">
+            <div class="sun"></div>
+            <div class="moon"></div>
+            <div class="corona"></div>
+            <div class="stars"></div>
+        </div>
+        
+        <div class="controls">
+            <button class="play-btn" id="playBtn">
+                <span class="play-icon">▶</span>
+                <span class="pause-icon">⏸</span>
+            </button>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="phase-indicator" id="phaseIndicator">日蚀开始</div>
+        </div>
+        
+        <div class="info-panel">
+            <h2>日蚀过程</h2>
+            <p>观察日蚀的各个阶段，从初亏到复圆的完整过程</p>
+            <div class="phase-info">
+                <div class="phase-item">
+                    <span class="phase-dot"></span>
+                    <span>初亏</span>
+                </div>
+                <div class="phase-item">
+                    <span class="phase-dot"></span>
+                    <span>食既</span>
+                </div>
+                <div class="phase-item">
+                    <span class="phase-dot"></span>
+                    <span>食甚</span>
+                </div>
+                <div class="phase-item">
+                    <span class="phase-dot"></span>
+                    <span>生光</span>
+                </div>
+                <div class="phase-item">
+                    <span class="phase-dot"></span>
+                    <span>复圆</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="eclipse.js"></script>
+</body>
+</html>

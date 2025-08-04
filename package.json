@@ -1,0 +1,23 @@
+{
+  "name": "eclipse-animation",
+  "version": "1.0.0",
+  "description": "日蚀动态特效 - 苹果风格",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "echo 'Build complete'",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "eclipse",
+    "animation",
+    "apple-style",
+    "javascript",
+    "css"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.9.0"
+  }
+}
