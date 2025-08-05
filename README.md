@@ -37,6 +37,29 @@
 npm install web-scraper-mcp
 ```
 
+## 使用 npx（推荐）
+
+无需安装即可直接使用 web-scraper-mcp：
+
+```bash
+# 查看帮助信息
+npx web-scraper-mcp --help
+
+# 爬取网站图片
+npx web-scraper-mcp scrape images https://example.com
+
+# 爬取网站文本
+npx web-scraper-mcp scrape text https://example.com
+
+# 列出已爬取的图片
+npx web-scraper-mcp list images
+
+# 获取爬取状态
+npx web-scraper-mcp status
+```
+
+这是使用 web-scraper-mcp 最简单的方式，特别适合偶尔使用或不想在本地安装的用户。
+
 ## 快速开始
 
 ### 作为MCP服务器运行
@@ -57,10 +80,13 @@ npm start
 ```json
 {
   "mcpServers": {
-    "web-scraper": {
-      "command": "node",
-      "args": ["/path/to/web-scraper-mcp/dist/index.js"],
-      "env": {}
+    "web-scraper-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "web-scraper-mcp",
+        "start"
+      ]
     }
   }
 }
@@ -200,6 +226,73 @@ const content = await textScraper.scrapeTextFromUrl('https://example.com');
 }
 ```
 
+## CLI 命令
+
+web-scraper-mcp 提供了命令行界面，可以通过 npx 或安装后使用。
+
+### start
+启动 MCP 服务器模式。
+
+```bash
+npx web-scraper-mcp start
+```
+
+### scrape
+爬取网站内容。
+
+```bash
+# 爬取图片
+npx web-scraper-mcp scrape images https://example.com
+
+# 爬取文本
+npx web-scraper-mcp scrape text https://example.com
+
+# 指定输出目录
+npx web-scraper-mcp scrape images https://example.com -o ./my-images
+
+# 设置并发数（仅对图片有效）
+npx web-scraper-mcp scrape images https://example.com -c 10
+```
+
+### list
+列出已爬取的内容。
+
+```bash
+# 列出图片
+npx web-scraper-mcp list images
+
+# 列出文本
+npx web-scraper-mcp list texts
+
+# 指定目录
+npx web-scraper-mcp list images -o ./my-images
+```
+
+### status
+获取爬取状态。
+
+```bash
+# 获取默认状态
+npx web-scraper-mcp status
+
+# 指定目录
+npx web-scraper-mcp status -o ./output
+```
+
+### cleanup
+清理爬取的内容。
+
+```bash
+# 清理图片
+npx web-scraper-mcp cleanup images
+
+# 清理文本
+npx web-scraper-mcp cleanup texts
+
+# 指定目录
+npx web-scraper-mcp cleanup images -o ./my-images
+```
+
 ## 使用示例
 
 ### 示例1: 爬取网站图片和文本
@@ -318,6 +411,18 @@ npm run build
 npm run dev
 ```
 
+### CLI 开发模式
+```bash
+# 运行 CLI 脚本（TypeScript）
+npm run dev:cli -- --help
+
+# 爬取图片（开发模式）
+npm run dev:cli -- scrape images https://example.com
+
+# 爬取文本（开发模式）
+npm run dev:cli -- scrape text https://example.com
+```
+
 ## 故障排除
 
 ### 常见问题
@@ -377,11 +482,16 @@ MIT License
 
 ## 支持
 
-- 提交问题: [GitHub Issues](https://github.com/yourusername/web-scraper-mcp/issues)
-- 文档: [Wiki](https://github.com/yourusername/web-scraper-mcp/wiki)
-- 示例: [Examples](https://github.com/yourusername/web-scraper-mcp/tree/main/examples)
+- 提交问题: [GitHub Issues](https://github.com/OpenNEONE/web-scraper-mcp/issues)
+- 文档: [Wiki](https://github.com/OpenNEONE/web-scraper-mcp/wiki)
+- 示例: [Examples](https://github.com/OpenNEONE/web-scraper-mcp/tree/main/examples)
 
 ## 更新日志
+
+### v1.1.0
+- 添加 CLI 支持，可通过 npx 直接使用
+- 新增命令行界面，支持 scrape、list、status、cleanup 等命令
+- 优化 README 文档，添加详细的使用说明
 
 ### v1.0.0
 - 初始版本发布
