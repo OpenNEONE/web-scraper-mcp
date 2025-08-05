@@ -62,7 +62,7 @@ npx web-scraper-mcp status
 
 ## 快速开始
 
-### 作为MCP服务器运行
+### 作为MCP服务器运行 
 
 1. 安装依赖：
 ```bash
@@ -76,6 +76,7 @@ npm run build
 npm start
 ```
 
+或者跳过以上，直接添加到IDE(最推荐)
 3. 在Claude Code中配置MCP服务器：
 ```json
 {
@@ -85,7 +86,6 @@ npm start
       "args": [
         "-y",
         "web-scraper-mcp",
-        "start"
       ]
     }
   }
